@@ -1,0 +1,5 @@
+Flask==0.11.1
+Flask-RESTful==0.3.5
+oslo.config==3.9.0
+Flask-SQLAlchemy==2.1
+PyMySQL==0.6.7
