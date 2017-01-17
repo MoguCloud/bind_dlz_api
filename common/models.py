@@ -26,3 +26,11 @@ class Dns(db.Model):
     resp_person = db.Column(db.String(64), default=CONF.resp_person)
     primary_ns = db.Column(db.String(64), default=CONF.primary_ns)
 
+    def to_dict(self):
+        return {'zone': self.zone, 'host': self.host, 'type': self.type, 'data': self.data, 'view': self.view}
+
+    def __str__(self):
+        return '{zone: %s, host: %s, type: %s, data: %s, view: %s}'\
+               % (self.zone, self.host, self.type, self.data, self.view)
+
+    __repr__ = __str__

@@ -19,3 +19,13 @@ def del_dns(zone, host, type, data, view):
     db.session.commit()
     LOGGING.info('DNS record delete successfully. zone=%s, host=%s, type=%s, data=%s', zone, host, type, data)
     return json.dumps({'status': 'success'}), 200
+
+
+def get_dns():
+    dns_records = Dns.query.all()
+    return json.dumps([dns_record.to_dict() for dns_record in dns_records])
+
+
+def get_dns_by_zone(zone):
+    dns_records = Dns.query.filter_by(zone=zone).all()
+    return json.dumps([dns_record.to_dict() for dns_record in dns_records])
