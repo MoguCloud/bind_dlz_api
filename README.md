@@ -7,7 +7,6 @@ RESTful API to Bind-DLZ, written by Python/Flask. Providing add/remove/query dns
 ### Config and Run
 
 1. Modify `dns_api.conf`:
-
 ```shell
 # Run on the given IP.
 host =
@@ -27,9 +26,7 @@ resp_person =
 primary_ns =
 ```
 
-
 2. Start Bind-DLZ Api:
-
 ```shell
 $ python dns_api.py
 ```
@@ -37,7 +34,6 @@ $ python dns_api.py
 ### Usage
 
 1. Add a DNS record:
-
 ```shell
 $ curl -X POST -H 'Content-Type: application/json' -d '{"zone": "example.com", "host": "test", "type": "A", "data": "1.1.1.1"}' http://localhost:8991/v1.0/dns
 ```
